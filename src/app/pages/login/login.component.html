@@ -1,24 +1,34 @@
 <div class="container">
   <div class="menu">
-    <app-hamburger-menu />
+    <app-hamburger-menu></app-hamburger-menu>
   </div>
 
   <img class="container__image" src="images/bkg.png" alt="background" />
+
   <div class="login">
     <header class="login__header">
-      <img class="login__header__image" src="images/bhd_logo@3x.png" />
+      <img
+        class="login__header__image"
+        src="images/bhd_logo@3x.png"
+        alt="Logo"
+      />
     </header>
 
     <main class="login__content">
       <form class="login__form" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
         <div class="login__field">
-          <img class="login__field__image" src="images/icon_user.svg" alt="" />
+          <img
+            class="login__field__image"
+            src="images/icon_user.svg"
+            alt="Usuario"
+          />
           <input
             id="username"
             type="text"
             class="login__field__input"
             name="username"
             formControlName="username"
+            placeholder="Usuario"
           />
         </div>
 
@@ -26,7 +36,7 @@
           <img
             class="login__field__image"
             src="images/icon_password.svg"
-            alt=""
+            alt="Contraseña"
           />
           <input
             id="password"
@@ -34,16 +44,19 @@
             class="login__field__input"
             name="password"
             formControlName="password"
+            placeholder="Contraseña"
           />
         </div>
 
         <div class="login__options">
-          <input
-            type="checkbox"
-            class="login__options__switch"
-            name="rememberMe"
-          />
-          <span class="login__switch-label">Recuerda mi usuario</span>
+          <label class="login__options__switch">
+            <input
+              type="checkbox"
+              class="login__options__checkbox"
+              name="rememberMe"
+            />
+            <span class="login__switch-label">Recuerda mi usuario</span>
+          </label>
         </div>
 
         <button type="submit" class="login__button">INICIAR SESIÓN</button>
