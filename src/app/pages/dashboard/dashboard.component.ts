@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../../service/products.service';
-import { Product } from '../../../models/apiModels';
+import { Product, CreditCard } from '../../../models/apiModels';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,17 +11,26 @@ import { CommonModule } from '@angular/common';
 })
 export class DashboardComponent {
   products: Product[] = [];
+  CreditCards: CreditCard[] = [];
+
   constructor(private productService: ProductsService) {}
   ngOnInit() {
     this.getProducts();
+    this.getCreditCards() 
   }
 
-  getProducts(){
+  getProducts() {
     const token = localStorage.getItem('token');
     this.productService.getProduct(token!).subscribe((products) => {
       this.products = products;
       console.log('products :>> ', this.products);
-    })
-
+    });
+  }
+  getCreditCards() {
+    const token = localStorage.getItem('token');
+    this.productService.getCreditCard(token!).subscribe((cards) => {
+      this.CreditCards = cards;
+      console.log('this.CreditCards ', this.CreditCards);
+    });
   }
 }

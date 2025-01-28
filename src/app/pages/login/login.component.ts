@@ -9,10 +9,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HamburgerMenuComponent } from '../../components/organisms/hamburger-menu/hamburger-menu.component';
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, HamburgerMenuComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

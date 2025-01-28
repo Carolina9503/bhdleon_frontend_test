@@ -2,28 +2,61 @@
   <h2 class="section__title">CUENTAS ({{ products.length }})</h2>
   @for (product of products; track $index) {
   <div class="account-card">
-    <div class="account-card__icon">
-      <img
-        src="images/icon_account_gray.svg"
-        alt="Icono de cuenta de ahorros"
-      />
-    </div>
+    <div class="account-card__border"></div>
+
     <div class="account-card__content">
-      <p class="account-card__title">{{ product.alias }}</p>
-      <p class="account-card__balance">
+      <div class="account-card__header">
+        <img
+          class="account-card__icon"
+          src="images/icon_account_gray.svg"
+          alt="Icono de productos"
+        />
+        <p class="account-card__title">{{ product.alias }}</p>
+      </div>
+
+      <div class="account-card__balance">
         <span class="account-card__currency">RD$</span>
-        <span class="account-card__amount">{{
+        <span class="account-card__value">{{
           product.availableAmount | number : "1.0-0"
         }}</span>
         <span class="account-card__decimals"
           >.{{ product.availableAmount | number : "1.2-2" | slice : -2 }}</span
         >
-      </p>
+      </div>
+
       <p class="account-card__description">Balance disponible</p>
     </div>
   </div>
 
   }
   <h2 class="section__title-cards">TARJETAS (2)</h2>
-  
+  @for (card of CreditCards; track $index) {
+  <div class="account-card">
+    <div class="account-card__border-credit-card"></div>
+
+    <div class="account-card__content">
+      <div class="account-card__header">
+        <img
+          class="account-card__icon"
+          src="images/icon_credit_card_gray.svg"
+          alt="Icono de ahorro"
+        />
+        <p class="account-card__title">{{ card.alias }}</p>
+      </div>
+
+      <div class="account-card__balance">
+        <span class="account-card__currency">RD$</span>
+        <span class="account-card__value">{{
+          card.availableAmountRD | number : "1.0-0"
+        }}</span>
+        <span class="account-card__decimals"
+          >.{{ card.availableAmountRD | number : "1.2-2" | slice : -2 }}</span
+        >
+      </div>
+
+      <p class="account-card__description">Balance disponible</p>
+    </div>
+  </div>
+
+  }
 </section>
