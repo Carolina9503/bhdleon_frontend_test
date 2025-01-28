@@ -1,0 +1,79 @@
+@use "../../../../src/theme/variables.scss";
+.section {
+  width: 375px;
+  height: 812px;
+  background-color: #f5f5f5;
+  margin: 0 auto;
+  padding: 25px;
+
+  &__title {
+    color: #49b742;
+    font-size: 16px;
+  }
+  &__title-cards{
+    color: #00477A;
+    font-size: 16px;
+    
+  }
+}
+.account-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  width: 320px;
+  border-left: 5px solid #49b742;
+
+  &__icon {
+    flex-shrink: 0;
+    margin-right: 12px;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+  }
+
+ 
+
+  &__balance {
+    font-size: 22px;
+    font-weight: bold;
+    color: #666666;
+  }
+
+  &__currency {
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+    margin-right: 4px;
+  }
+
+  &__amount {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  &__decimals {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+  }
+
+  &__description {
+    font-size: 12px;
+    color: #777;
+  }
+}

@@ -1,0 +1,49 @@
+<div class="container">
+  <img class="container__image" src="images/bkg.png" alt="background" />
+  <div class="login">
+    <header class="login__header">
+      <img class="login__header__image" src="images/bhd_logo@3x.png" />
+    </header>
+
+    <main class="login__content">
+      <form class="login__form" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <div class="login__field">
+          <img class="login__field__image" src="images/icon_user.svg" alt="" />
+          <input
+            id="username"
+            type="text"
+            class="login__field__input"
+            name="username"
+            formControlName="username"
+          />
+        </div>
+
+        <div class="login__field">
+          <img
+            class="login__field__image"
+            src="images/icon_password.svg"
+            alt=""
+          />
+          <input
+            id="password"
+            type="password"
+            class="login__field__input"
+            name="password"
+            formControlName="password"
+          />
+        </div>
+
+        <div class="login__options">
+          <input
+            type="checkbox"
+            class="login__options__switch"
+            name="rememberMe"
+          />
+          <span class="login__switch-label">Recuerda mi usuario</span>
+        </div>
+
+        <button type="submit" class="login__button">INICIAR SESIÓN</button>
+      </form>
+    </main>
+  </div>
+</div>

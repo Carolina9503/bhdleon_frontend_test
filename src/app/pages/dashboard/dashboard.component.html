@@ -1,0 +1,29 @@
+<section class="section">
+  <h2 class="section__title">CUENTAS ({{ products.length }})</h2>
+  @for (product of products; track $index) {
+  <div class="account-card">
+    <div class="account-card__icon">
+      <img
+        src="images/icon_account_gray.svg"
+        alt="Icono de cuenta de ahorros"
+      />
+    </div>
+    <div class="account-card__content">
+      <p class="account-card__title">{{ product.alias }}</p>
+      <p class="account-card__balance">
+        <span class="account-card__currency">RD$</span>
+        <span class="account-card__amount">{{
+          product.availableAmount | number : "1.0-0"
+        }}</span>
+        <span class="account-card__decimals"
+          >.{{ product.availableAmount | number : "1.2-2" | slice : -2 }}</span
+        >
+      </p>
+      <p class="account-card__description">Balance disponible</p>
+    </div>
+  </div>
+
+  }
+  <h2 class="section__title-cards">TARJETAS (2)</h2>
+  
+</section>
