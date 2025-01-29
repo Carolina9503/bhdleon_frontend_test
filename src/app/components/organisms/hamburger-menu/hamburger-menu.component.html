@@ -5,15 +5,49 @@
 
   <div class="menu__content" [class.menu__content--open]="isOpen">
     <ul class="menu__list">
-      @for (item of menuItems; track $index) {
-      <li class="menu__item">
-        <img class="menu__icon" [src]="item.icon" [alt]="item.label" />
-        <span class="menu__text">{{ item.label }}</span>
-      </li>
-      }
+      @if (token !== '') {
+      <header class="menu__header">
+        <div class="menu__header__block">
+          <img
+            class="menu__header__block__image"
+            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="Logo"
+            width="42px"
+            height="42px"
+          />
+          <span class="menu__header__block__name">Juan Perez</span>
+        </div>
 
+        <hr class="menu__header__hr" />
+      </header>
+
+      @for (item of menuItems; track $index) {
+      <li>
+        <a
+          class="menu__item"
+          [routerLink]="item.path"
+          routerLinkActive="router-link-active"
+        >
+          <img class="menu__icon" [src]="item.icon" [alt]="item.label" />
+          <span class="menu__text">{{ item.label }}</span>
+        </a>
+      </li>
+
+      }
       <hr class="menu__divider" />
-      @for (item of extraItems; track $index) {
+
+      } @if (token === '') {
+      <header class="menu__header">
+        <img
+          class="menu__header__image"
+          src="images/bhd_logo@3x.png"
+          alt="Logo"
+          width="149px"
+          height="46px"
+        />
+        <hr class="menu__header__hr" />
+      </header>
+      } @for (item of extraItems; track $index) {
       <li class="menu__item">
         <img class="menu__icon" [src]="item.icon" [alt]="item.label" />
         <span class="menu__text">{{ item.label }}</span>

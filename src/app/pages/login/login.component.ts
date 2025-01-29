@@ -21,7 +21,11 @@ export class LoginComponent {
   acces_token: any = {};
   loginForm: FormGroup;
 
-  constructor(private loginService: LoginService, private fb: FormBuilder, private router: Router) {
+  constructor(
+    private loginService: LoginService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
@@ -31,7 +35,7 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       console.log('Formulario enviado:', this.loginForm.value);
-      this.router.navigate(['/mis-productos'])
+      this.router.navigate(['/mis-productos']);
     } else {
       console.log('Formulario inválido');
     }
@@ -44,8 +48,7 @@ export class LoginComponent {
     this.loginService.getToken(this.loginForm.value).subscribe((token) => {
       this.acces_token = token;
       localStorage.setItem('token', this.acces_token.access_token);
-      console.log('object :>> ', this.acces_token.access_token
-      );
+      console.log('object :>> ', this.acces_token.access_token);
     });
   }
 }
