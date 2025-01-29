@@ -10,6 +10,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HamburgerMenuComponent } from '../../components/organisms/hamburger-menu/hamburger-menu.component';
+import { Token } from '../../../models/apiModels';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,10 @@ import { HamburgerMenuComponent } from '../../components/organisms/hamburger-men
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  acces_token: any = {};
+  acces_token: Token = {
+    access_token: '',
+    refresh_token: '',
+  };
   loginForm: FormGroup;
 
   constructor(

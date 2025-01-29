@@ -1,4 +1,8 @@
 <section class="section">
+  <div class="section__menu">
+    <app-hamburger-menu></app-hamburger-menu>
+  </div>
+
   <h2 class="section__title">CUENTAS ({{ products.length }})</h2>
   @for (product of products; track $index) {
   <div class="account-card">
@@ -53,6 +57,17 @@
           >.{{ card.availableAmountRD | number : "1.2-2" | slice : -2 }}</span
         >
       </div>
+      @if (card.availableAmountUS > 0) {
+      <div class="account-card__balance">
+        <span class="account-card__currency">US$</span>
+        <span class="account-card__value">{{
+          card.availableAmountUS | number : "1.0-0"
+        }}</span>
+        <span class="account-card__decimals"
+          >.{{ card.availableAmountUS | number : "1.2-2" | slice : -2 }}</span
+        >
+      </div>
+      }
 
       <p class="account-card__description">Balance disponible</p>
     </div>

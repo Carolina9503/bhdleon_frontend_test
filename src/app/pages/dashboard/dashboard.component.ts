@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { ProductsService } from '../../service/products.service';
 import { Product, CreditCard } from '../../../models/apiModels';
 import { CommonModule } from '@angular/common';
+import { HamburgerMenuComponent } from '../../components/organisms/hamburger-menu/hamburger-menu.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule],
+  imports: [CommonModule, HamburgerMenuComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })

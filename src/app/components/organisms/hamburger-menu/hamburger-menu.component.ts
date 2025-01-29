@@ -1,5 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { UserService } from '../../../service/user.service';
+import { User } from '../../../../models/apiModels';
 
 @Component({
   selector: 'app-hamburger-menu',
@@ -10,6 +12,7 @@ import { RouterLink } from '@angular/router';
 export class HamburgerMenuComponent {
   isOpen = false;
   token: string = '';
+  userData: User = { name: '', lastName: '', photo: '' };
 
   menuItems = [
     {
@@ -27,11 +30,22 @@ export class HamburgerMenuComponent {
     { label: 'Sucursales', icon: 'images/icon_branches.svg' },
   ];
 
-  constructor() {
+  constructor(private userService: UserService) {
     this.token = localStorage.getItem('token') ?? '';
   }
 
   toggleMenu() {
     this.isOpen = !this.isOpen;
+  }
+  ngOnInit(): void {
+    this.getUser();
+  }
+
+  getUser() {
+    const token = localStorage.getItem('token');
+    this.userService.getUser(token ?? '').subscribe((user) => {
+      this.userData = user;
+      console.log('user :>> ', this.userData);
+    });
   }
 }

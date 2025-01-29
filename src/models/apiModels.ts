@@ -10,10 +10,20 @@ export interface Product {
   productType: string;
 }
 export interface CreditCard {
-  alias:             string;
-  number:            string;
+  alias: string;
+  number: string;
   availableAmountRD: number;
   availableAmountUS: number;
-  isInternational:   boolean;
-  productType:       string;
+  isInternational: boolean;
+  productType: string;
+}
+
+export interface User {
+  name: string;
+  lastName: string;
+  photo: string;
+}
+export interface Token {
+  access_token:  string;
+  refresh_token: string;
 }
