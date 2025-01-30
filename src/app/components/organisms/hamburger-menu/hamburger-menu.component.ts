@@ -38,8 +38,8 @@ export class HamburgerMenuComponent {
   ];
 
   extraItems = [
-    { label: 'Contacto', icon: 'images/icon_contact.svg' },
-    { label: 'Sucursales', icon: 'images/icon_branches.svg' },
+    { label: 'Contacto', icon: 'images/icon_contact.svg', path: '/contacto', },
+    { label: 'Sucursales', icon: 'images/icon_branches.svg', path: '/sucursales' },
   ];
 
   constructor(private userService: UserService) {

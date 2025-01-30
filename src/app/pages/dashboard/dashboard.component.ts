@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
-import { ProductsService } from '../../service/products.service';
-import { Product, CreditCard } from '../../../models/apiModels';
 import { CommonModule } from '@angular/common';
-import { HamburgerMenuComponent } from '../../components/organisms/hamburger-menu/hamburger-menu.component';
+import { Component } from '@angular/core';
+import { CreditCard, Product } from '../../../models/apiModels';
 import { BackgroundComponent } from '../../components/molecules/background/background.component';
 import { HeaderComponent } from '../../components/molecules/header/header.component';
+import { ProductsService } from '../../service/products.service';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, HamburgerMenuComponent, BackgroundComponent, HeaderComponent],
+  imports: [CommonModule, BackgroundComponent, HeaderComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
