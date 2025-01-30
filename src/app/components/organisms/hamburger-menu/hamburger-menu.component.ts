@@ -16,13 +16,25 @@ export class HamburgerMenuComponent {
 
   menuItems = [
     {
-      label: 'Mis productos',
+      path: '/mis-productos',
       icon: 'images/icon_my_products_green.svg',
-      path: 'mis-productos',
+      title: 'Mis productos',
     },
-    { label: 'Transacciones', icon: 'images/icon_transactions_green.svg' },
-    { label: 'Ofertas', icon: 'images/icon_offers_green.svg' },
-    { label: 'Configuraciones', icon: 'images/icon_config_green.svg' },
+    {
+      path: '/transacciones',
+      icon: 'images/icon_transactions_green.svg',
+      title: 'Transacciones',
+    },
+    {
+      path: '/ofertas',
+      icon: 'images/icon_offers_green.svg',
+      title: 'Ofertas',
+    },
+    {
+      path: '/configuracion',
+      icon: 'images/icon_config_green.svg',
+      title: 'Configuración',
+    },
   ];
 
   extraItems = [

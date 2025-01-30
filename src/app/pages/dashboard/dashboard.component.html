@@ -1,77 +1,81 @@
-<section class="section">
-  <div class="section__menu">
-    <app-hamburger-menu></app-hamburger-menu>
-  </div>
+<app-background>
+  <app-header>
+    <h1 class="content__header">Mis productos</h1>
+  </app-header>
+  <section class="section">
+    <h2 class="section__title-cards">CUENTAS (2)</h2>
 
-  <h2 class="section__title">CUENTAS ({{ products.length }})</h2>
-  @for (product of products; track $index) {
-  <div class="account-card">
-    <div class="account-card__border"></div>
+    @for (product of products; track $index) {
+    <div class="account-card">
+      <div class="account-card__border"></div>
 
-    <div class="account-card__content">
-      <div class="account-card__header">
-        <img
-          class="account-card__icon"
-          src="images/icon_account_gray.svg"
-          alt="Icono de productos"
-        />
-        <p class="account-card__title">{{ product.alias }}</p>
+      <div class="account-card__content">
+        <div class="account-card__header">
+          <img
+            class="account-card__icon"
+            src="images/icon_account_gray.svg"
+            alt="Icono de productos"
+          />
+          <p class="account-card__title">{{ product.alias }}</p>
+        </div>
+
+        <div class="account-card__balance">
+          <span class="account-card__currency">RD$</span>
+          <span class="account-card__value">{{
+            product.availableAmount | number : "1.0-0"
+          }}</span>
+          <span class="account-card__decimals"
+            >.{{
+              product.availableAmount | number : "1.2-2" | slice : -2
+            }}</span
+          >
+        </div>
+
+        <p class="account-card__description">Balance disponible</p>
       </div>
-
-      <div class="account-card__balance">
-        <span class="account-card__currency">RD$</span>
-        <span class="account-card__value">{{
-          product.availableAmount | number : "1.0-0"
-        }}</span>
-        <span class="account-card__decimals"
-          >.{{ product.availableAmount | number : "1.2-2" | slice : -2 }}</span
-        >
-      </div>
-
-      <p class="account-card__description">Balance disponible</p>
     </div>
-  </div>
 
-  }
-  <h2 class="section__title-cards">TARJETAS (2)</h2>
-  @for (card of CreditCards; track $index) {
-  <div class="account-card">
-    <div class="account-card__border-credit-card"></div>
+    }
+    <h2 class="section__title-cards">TARJETAS (2)</h2>
+    @for (card of CreditCards; track $index) {
+    <div class="account-card">
+      <div class="account-card__border-credit-card"></div>
 
-    <div class="account-card__content">
-      <div class="account-card__header">
-        <img
-          class="account-card__icon"
-          src="images/icon_credit_card_gray.svg"
-          alt="Icono de ahorro"
-        />
-        <p class="account-card__title">{{ card.alias }}</p>
+      <div class="account-card__content">
+        <div class="account-card__header">
+          <img
+            class="account-card__icon"
+            src="images/icon_credit_card_gray.svg"
+            alt="Icono de ahorro"
+          />
+          <p class="account-card__title">{{ card.alias }}</p>
+        </div>
+
+        <div class="account-card__balance">
+          <span class="account-card__currency">RD$</span>
+          <span class="account-card__value">{{
+            card.availableAmountRD | number : "1.0-0"
+          }}</span>
+          <span class="account-card__decimals"
+            >.{{ card.availableAmountRD | number : "1.2-2" | slice : -2 }}</span
+          >
+        </div>
+        @if (card.availableAmountUS > 0) {
+        <div class="account-card__balance">
+          <span class="account-card__currency">US$</span>
+          <span class="account-card__value">{{
+            card.availableAmountUS | number : "1.0-0"
+          }}</span>
+          <span class="account-card__decimals"
+            >.{{ card.availableAmountUS | number : "1.2-2" | slice : -2 }}</span
+          >
+        </div>
+        }
+
+        <p class="account-card__description">Balance disponible</p>
       </div>
-
-      <div class="account-card__balance">
-        <span class="account-card__currency">RD$</span>
-        <span class="account-card__value">{{
-          card.availableAmountRD | number : "1.0-0"
-        }}</span>
-        <span class="account-card__decimals"
-          >.{{ card.availableAmountRD | number : "1.2-2" | slice : -2 }}</span
-        >
-      </div>
-      @if (card.availableAmountUS > 0) {
-      <div class="account-card__balance">
-        <span class="account-card__currency">US$</span>
-        <span class="account-card__value">{{
-          card.availableAmountUS | number : "1.0-0"
-        }}</span>
-        <span class="account-card__decimals"
-          >.{{ card.availableAmountUS | number : "1.2-2" | slice : -2 }}</span
-        >
-      </div>
-      }
-
-      <p class="account-card__description">Balance disponible</p>
     </div>
-  </div>
 
-  }
-</section>
+    }
+  </section>
+</app-background>

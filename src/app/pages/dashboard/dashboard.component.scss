@@ -1,5 +1,11 @@
 @use "../../../../src/theme/variables.scss";
 
+.content__header {
+  font-size: 18px;
+  font-weight: bold;
+  color: #666666;
+}
+
 .section {
   position: relative;
   width: 375px;
@@ -7,8 +13,9 @@
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
-  padding-top: 65px;
+  padding-top: 68px;
   padding-left: 22px;
+  overflow-Y: auto;
 
   &__title {
     color: #49b742;

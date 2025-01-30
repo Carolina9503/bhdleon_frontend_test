@@ -3,10 +3,12 @@ import { ProductsService } from '../../service/products.service';
 import { Product, CreditCard } from '../../../models/apiModels';
 import { CommonModule } from '@angular/common';
 import { HamburgerMenuComponent } from '../../components/organisms/hamburger-menu/hamburger-menu.component';
+import { BackgroundComponent } from '../../components/molecules/background/background.component';
+import { HeaderComponent } from '../../components/molecules/header/header.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, HamburgerMenuComponent],
+  imports: [CommonModule, HamburgerMenuComponent, BackgroundComponent, HeaderComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
