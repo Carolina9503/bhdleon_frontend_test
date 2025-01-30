@@ -14,8 +14,15 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   padding-top: 68px;
-  padding-left: 22px;
-  overflow-Y: auto;
+  padding-left: 24px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &__title {
     color: #49b742;
@@ -40,9 +47,10 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 12px 16px;
-  width: 320px;
+  width: 326px;
   position: relative;
   margin-bottom: 22px;
+  box-sizing: border-box;
 
   &__border {
     width: 5px;
